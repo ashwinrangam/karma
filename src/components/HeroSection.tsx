@@ -1,36 +1,21 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import MagneticCursor from './MagneticCursor';
-import ThreeBackground from './ThreeBackground';
-import Modal from './Modal';
-
-const videoUrl = '/assets/cover/28510b1514ac4c3782ee4bf65b9b3a51.jpg'; // Replace with actual video path
 
 export default function HeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-[#0C0C0D]">
-      {/* Video Background */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src={videoUrl}
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster={videoUrl}
-        style={{ filter: 'brightness(0.7) blur(1px)' }}
-      />
-      {/* Vignette Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-[#2d001a99] to-[#0C0C0D]/90 pointer-events-none" />
-      {/* Floating WebGL Elements */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
-          <ThreeBackground />
-        </Canvas>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0C0C0D] via-[#1a0a1a] to-[#0C0C0D]" />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FD3555]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#B853FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#EFEFEF]/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
+
       {/* Content */}
       <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-4">
         <motion.h1
@@ -49,33 +34,56 @@ export default function HeroSection() {
             Rebuilding the World.
           </motion.span>
         </motion.h1>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 1, ease: 'easeOut' }}
+          className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl"
+        >
+          AI / Cloud / Strategy / People — Delivered with Precision & Heart.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
           className="flex flex-col md:flex-row gap-6 justify-center mt-8"
         >
-          <button
-            className="px-8 py-4 rounded-full bg-[#FD3555] text-white font-bold text-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-[#B853FF] focus:outline-none"
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 rounded-full bg-[#FD3555] text-white font-bold text-lg shadow-lg transition-all duration-300 hover:bg-[#B853FF] focus:outline-none"
           >
             Explore Karmuu
-          </button>
-          <button
-            className="px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-bold text-lg shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:bg-white/20 focus:outline-none"
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-bold text-lg shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white/20 focus:outline-none"
             onClick={() => setModalOpen(true)}
           >
             Watch How We Work
-          </button>
+          </motion.button>
         </motion.div>
       </div>
-      {/* Magnetic Cursor */}
-      <MagneticCursor />
-      {/* Modal Sizzle Reel */}
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        <div className="w-full h-full flex items-center justify-center">
-          <video src="/assets/cover/b1701654921245689e5e1f2ddb46ce05.jpg" controls className="w-full h-auto rounded-xl shadow-2xl" />
+
+      {/* Simple Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
+          <div className="bg-[#0C0C0D] p-8 rounded-xl max-w-2xl mx-4" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-white text-xl font-bold">How We Work</h3>
+              <button onClick={() => setModalOpen(false)} className="text-white text-2xl hover:text-[#FD3555]">×</button>
+            </div>
+            <div className="bg-gradient-to-r from-[#FD3555]/20 to-[#B853FF]/20 p-6 rounded-lg">
+              <p className="text-white/80 text-center">
+                Our innovative approach combines cutting-edge AI with human-centered design to deliver transformative solutions.
+              </p>
+            </div>
+          </div>
         </div>
-      </Modal>
+      )}
     </section>
   );
 }
