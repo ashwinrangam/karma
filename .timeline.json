@@ -1,0 +1,71 @@
+{
+  "timeline_index": 40,
+  "planner": {
+    "Team Leader": {
+      "1": {
+        "task_id": "1",
+        "dependent_task_ids": [],
+        "instruction": "Create a visually stunning, high-complexity website for Karmuu Technologies with the following specifications:\n\n**Color Palette:**\n- Vantablack (#0A0A0A) - Primary background\n- Porcelain (#F3F1ED) - Primary text  \n- Infra Coral (#F1464A) - Hover & CTA accents\n- Iron Violet (#635D7D) - UI elements & soft hues\n- Dust Silver (#CCCCCC) - Animated outlines, grids\n\n**Hero Section:** Fullscreen video background with looping particles/data clouds forming Karmuu logo, overlay text \"Redesigning Intelligence. Rebuilding the World.\" with glassmorphic CTA buttons and magnetic cursor interaction.\n\n**Five Main Sections:**\n1. Mission section with animated vignette background and scroll-triggered text animations\n2. Karmuu Operating System with parallax intelligence matrix and 3D service tiles\n3. Team spotlight with horizontal scroll and kinetic type animations  \n4. Case studies with dynamic grid and hover animations\n5. Results metrics with animated particles and coral spark lines\n6. Final CTA with glowing border animations\n\n**Technical Requirements:**\n- Use GSAP + ScrollTrigger for scroll-driven animations\n- Implement Three.js/WebGL for 3D elements and shaders\n- Add Lottie animations for microinteractions\n- Use Framer Motion for page transitions\n- Include magnetic cursor with particle trails\n- Implement theme toggle (dark mode default)\n- Add AI assistant module for user guidance\n\n**Technology Stack:** Shadcn-ui, TypeScript, Tailwind CSS with advanced animation libraries\n\nCreate a complete, production-ready website that feels like a blend of sci-fi film intro, art museum, and Fortune 100 tech brand with every interaction feeling intentional and elevated.",
+        "task_type": "general",
+        "code": "",
+        "result": "",
+        "is_success": false,
+        "is_finished": true,
+        "assignee": "Alex",
+        "start_at": 1753775743.1166842,
+        "end_at": 1753776645.8909845
+      },
+      "current_task_id": "1"
+    }
+  },
+  "gallery_last_file": {},
+  "timeline_status": {
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "11": 0,
+    "12": 1,
+    "13": 1,
+    "14": 1,
+    "15": 1,
+    "16": 1,
+    "17": 0,
+    "18": 1,
+    "19": 1,
+    "20": 0,
+    "21": 1,
+    "22": 1,
+    "23": 1,
+    "24": 1,
+    "25": 0,
+    "26": 1,
+    "27": 1,
+    "28": 1,
+    "29": 1,
+    "30": 1,
+    "31": 1,
+    "32": 1,
+    "33": 1,
+    "34": 1,
+    "35": 1,
+    "36": 1,
+    "37": 1,
+    "38": 1,
+    "39": 1,
+    "40": 1
+  },
+  "preview_servers": {},
+  "preview_server": {
+    "project_dir": "/workspace/shadcn-ui",
+    "status": "initializing",
+    "config_path": ".mgx/config.yaml",
+    "timeline_index": 3
+  }
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10 10; /* Vantablack */
+    --foreground: 243 241 237; /* Porcelain */
+
+    --card: 10 10 10;
+    --card-foreground: 243 241 237;
+
+    --popover: 10 10 10;
+    --popover-foreground: 243 241 237;
+
+    --primary: 241 70 74; /* Infra Coral */
+    --primary-foreground: 243 241 237;
+
+    --secondary: 99 93 125; /* Iron Violet */
+    --secondary-foreground: 243 241 237;
+
+    --muted: 204 204 204; /* Dust Silver */
+    --muted-foreground: 99 93 125;
+
+    --accent: 99 93 125;
+    --accent-foreground: 243 241 237;
+
+    --destructive: 241 70 74;
+    --destructive-foreground: 243 241 237;
+
+    --border: 99 93 125;
+    --input: 99 93 125;
+    --ring: 241 70 74;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 10 10 10;
+    --foreground: 243 241 237;
+
+    --card: 10 10 10;
+    --card-foreground: 243 241 237;
+
+    --popover: 10 10 10;
+    --popover-foreground: 243 241 237;
+
+    --primary: 241 70 74;
+    --primary-foreground: 243 241 237;
+
+    --secondary: 99 93 125;
+    --secondary-foreground: 243 241 237;
+
+    --muted: 204 204 204;
+    --muted-foreground: 99 93 125;
+
+    --accent: 99 93 125;
+    --accent-foreground: 243 241 237;
+
+    --destructive: 241 70 74;
+    --destructive-foreground: 243 241 237;
+
+    --border: 99 93 125;
+    --input: 99 93 125;
+    --ring: 241 70 74;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(241, 70, 74, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(241, 70, 74, 0.5);
+  }
+}
+
+@layer components {
+  .magnetic-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(241, 70, 74, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: difference;
+  }
+
+  .glassmorphic {
+    backdrop-filter: blur(16px);
+    background: rgba(243, 241, 237, 0.05);
+    border: 1px solid rgba(241, 70, 74, 0.2);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      rgba(241, 70, 74, 0.8), 
+      rgba(99, 93, 125, 0.6), 
+      rgba(204, 204, 204, 0.4),
+      rgba(241, 70, 74, 0.8)
+    );
+    border-radius: inherit;
+    z-index: -1;
+    animation: glowing 2s linear infinite;
+  }
+
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
+
+  .particle-trail {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(241, 70, 74, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade-out 1s ease-out forwards;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  .neural-bg {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(241, 70, 74, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(99, 93, 125, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(204, 204, 204, 0.05) 0%, transparent 50%);
+  }
+
+  .cinematic-text {
+    background: linear-gradient(135deg, 
+      rgba(243, 241, 237, 1) 0%, 
+      rgba(243, 241, 237, 0.8) 50%, 
+      rgba(241, 70, 74, 0.9) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+/* Hide scrollbar for horizontal scroll sections */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}

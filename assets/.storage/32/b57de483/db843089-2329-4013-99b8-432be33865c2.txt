@@ -1,0 +1,203 @@
+$ cd /workspace/shadcn-ui
+$ cd /workspace/shadcn-ui && pnpm i && pnpm run lint
+
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui/node_modules/.pnpm: Lockfile /workspace/shadcn-ui/node_modules/.pnpm/lock.yaml not compatible with current pnpm
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui: Lockfile /workspace/shadcn-ui/pnpm-lock.yaml not compatible with current pnpm
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 16, reused 6, downloaded 3, added 0
+Progress: resolved 32, reused 17, downloaded 3, added 0
+Progress: resolved 43, reused 22, downloaded 3, added 0
+Progress: resolved 49, reused 32, downloaded 3, added 0
+Progress: resolved 53, reused 39, downloaded 5, added 0
+Progress: resolved 59, reused 41, downloaded 7, added 0
+Progress: resolved 63, reused 45, downloaded 8, added 0
+Progress: resolved 67, reused 49, downloaded 9, added 0
+Progress: resolved 67, reused 49, downloaded 11, added 0
+Progress: resolved 67, reused 49, downloaded 12, added 0
+Progress: resolved 67, reused 49, downloaded 13, added 0
+Progress: resolved 67, reused 49, downloaded 14, added 0
+Progress: resolved 67, reused 49, downloaded 15, added 0
+Progress: resolved 67, reused 49, downloaded 16, added 0
+Progress: resolved 67, reused 49, downloaded 17, added 0
+Progress: resolved 67, reused 49, downloaded 18, added 0
+ ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@radix-ui%2Freact-sheet: Not Found - 404
+
+This error happened while installing a direct dependency of /workspace/shadcn-ui
+
+@radix-ui/react-sheet is not in the npm registry, or you have no permission to fetch it.
+
+No authorization header was set for the request.
+$ cd /workspace/shadcn-ui && pnpm i && pnpm run lint
+
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui/node_modules/.pnpm: Lockfile /workspace/shadcn-ui/node_modules/.pnpm/lock.yaml not compatible with current pnpm
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui: Lockfile /workspace/shadcn-ui/pnpm-lock.yaml not compatible with current pnpm
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 52, reused 49, downloaded 0, added 0
+Progress: resolved 67, reused 67, downloaded 0, added 0
+Progress: resolved 158, reused 149, downloaded 8, added 0
+Progress: resolved 208, reused 191, downloaded 11, added 0
+Progress: resolved 254, reused 223, downloaded 19, added 0
+Progress: resolved 317, reused 284, downloaded 29, added 0
+Progress: resolved 371, reused 308, downloaded 30, added 0
+Progress: resolved 414, reused 335, downloaded 35, added 0
+Progress: resolved 449, reused 364, downloaded 40, added 0
+Packages: +416
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 457, reused 367, downloaded 47, added 0
+Progress: resolved 457, reused 367, downloaded 49, added 0
+Progress: resolved 457, reused 367, downloaded 49, added 18
+Progress: resolved 457, reused 367, downloaded 49, added 29
+Progress: resolved 457, reused 367, downloaded 49, added 34
+Progress: resolved 457, reused 367, downloaded 49, added 36
+Progress: resolved 457, reused 367, downloaded 49, added 38
+Progress: resolved 457, reused 367, downloaded 49, added 39
+Progress: resolved 457, reused 367, downloaded 49, added 46
+Progress: resolved 457, reused 367, downloaded 49, added 90
+Progress: resolved 457, reused 367, downloaded 49, added 112
+Progress: resolved 457, reused 367, downloaded 49, added 113
+Progress: resolved 457, reused 367, downloaded 49, added 117
+Progress: resolved 457, reused 367, downloaded 49, added 118
+Progress: resolved 457, reused 367, downloaded 49, added 119
+Progress: resolved 457, reused 367, downloaded 49, added 120
+Progress: resolved 457, reused 367, downloaded 49, added 123
+Progress: resolved 457, reused 367, downloaded 49, added 124
+Progress: resolved 457, reused 367, downloaded 49, added 127
+Progress: resolved 457, reused 367, downloaded 49, added 128
+Progress: resolved 457, reused 367, downloaded 49, added 129
+Progress: resolved 457, reused 367, downloaded 49, added 130
+Progress: resolved 457, reused 367, downloaded 49, added 131
+Progress: resolved 457, reused 367, downloaded 49, added 132
+Progress: resolved 457, reused 367, downloaded 49, added 132, done
+
+dependencies:
++ @gsap/react 2.1.2
++ @radix-ui/react-accordion 1.2.11
++ @radix-ui/react-alert-dialog 1.1.14
++ @radix-ui/react-aspect-ratio 1.1.7
++ @radix-ui/react-avatar 1.1.10
++ @radix-ui/react-checkbox 1.3.2
++ @radix-ui/react-collapsible 1.1.11
++ @radix-ui/react-context-menu 2.2.15
++ @radix-ui/react-dialog 1.1.14
++ @radix-ui/react-dropdown-menu 2.1.15
++ @radix-ui/react-hover-card 1.1.14
++ @radix-ui/react-label 2.1.7
++ @radix-ui/react-menubar 1.1.15
++ @radix-ui/react-navigation-menu 1.2.13
++ @radix-ui/react-popover 1.1.14
++ @radix-ui/react-progress 1.1.7
++ @radix-ui/react-radio-group 1.3.7
++ @radix-ui/react-scroll-area 1.2.9
++ @radix-ui/react-select 2.2.5
++ @radix-ui/react-separator 1.1.7
++ @radix-ui/react-slider 1.3.5
++ @radix-ui/react-switch 1.2.5
++ @radix-ui/react-tabs 1.1.12
++ @radix-ui/react-toast 1.2.14
++ @radix-ui/react-toggle 1.1.9
++ @radix-ui/react-toggle-group 1.1.10
++ @radix-ui/react-tooltip 1.2.7
++ cmdk 1.0.0 (1.1.1 is available)
++ date-fns 4.1.0
++ framer-motion 11.18.2 (12.23.11 is available)
++ gsap 3.13.0
++ input-otp 1.4.2
++ lottie-react 2.4.1
++ lucide-react 0.460.0 (0.533.0 is available)
++ react-day-picker 9.8.1
++ react-hook-form 7.61.1
++ react-resizable-panels 2.1.9 (3.0.3 is available)
++ react-router-dom 6.30.1 (7.7.1 is available)
++ recharts 2.15.4 (3.1.0 is available)
++ sonner 1.7.4 (2.0.6 is available)
++ three 0.169.0 (0.178.0 is available)
++ vaul 1.1.2
+
+devDependencies:
++ @eslint/js 9.32.0
++ @types/three 0.169.0 (0.178.1 is available)
++ @vitejs/plugin-react 4.7.0
++ eslint 9.32.0
++ eslint-plugin-react-hooks 5.2.0
++ eslint-plugin-react-refresh 0.4.20
++ typescript 5.6.3 (5.8.3 is available)
++ typescript-eslint 8.38.0
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild.                                            │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 49.1s using pnpm v10.13.1
+
+> karmuu-technologies@0.0.0 lint /workspace/shadcn-ui
+> eslint .
+
+
+/workspace/shadcn-ui/src/components/MetricsSection.tsx
+  181:17  error  'currentValue' is never reassigned. Use 'const' instead  prefer-const
+
+/workspace/shadcn-ui/src/components/ThreeBackground.tsx
+  78:18  warning  The ref value 'mountRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'mountRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+/workspace/shadcn-ui/src/components/ui/badge.tsx
+  29:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/button.tsx
+  43:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/form.tsx
+  122:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/navigation-menu.tsx
+  107:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/sidebar.tsx
+  597:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/sonner.tsx
+  27:19  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/toggle.tsx
+  37:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/tailwind.config.ts
+  105:13  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 10 problems (2 errors, 8 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+ ELIFECYCLE  Command failed with exit code 1.
+$ cd /workspace/shadcn-ui && pnpm run lint --fix
+
+
+> karmuu-technologies@0.0.0 lint /workspace/shadcn-ui
+> eslint . --fix
+
+
+/workspace/shadcn-ui/src/components/ui/badge.tsx
+  29:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/button.tsx
+  43:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/form.tsx
+  122:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/navigation-menu.tsx
+  107:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/sidebar.tsx
+  597:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/sonner.tsx
+  27:19  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/workspace/shadcn-ui/src/components/ui/toggle.tsx
+  37:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+✖ 7 problems (0 errors, 7 warnings)
+

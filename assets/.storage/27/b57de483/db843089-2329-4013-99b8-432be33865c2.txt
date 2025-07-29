@@ -1,0 +1,29 @@
+$ cd /workspace/shadcn-ui
+$ cd /workspace/shadcn-ui && pnpm i && pnpm run lint
+
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui/node_modules/.pnpm: Lockfile /workspace/shadcn-ui/node_modules/.pnpm/lock.yaml not compatible with current pnpm
+ WARN  Ignoring broken lockfile at /workspace/shadcn-ui: Lockfile /workspace/shadcn-ui/pnpm-lock.yaml not compatible with current pnpm
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 16, reused 6, downloaded 3, added 0
+Progress: resolved 32, reused 17, downloaded 3, added 0
+Progress: resolved 43, reused 22, downloaded 3, added 0
+Progress: resolved 49, reused 32, downloaded 3, added 0
+Progress: resolved 53, reused 39, downloaded 5, added 0
+Progress: resolved 59, reused 41, downloaded 7, added 0
+Progress: resolved 63, reused 45, downloaded 8, added 0
+Progress: resolved 67, reused 49, downloaded 9, added 0
+Progress: resolved 67, reused 49, downloaded 11, added 0
+Progress: resolved 67, reused 49, downloaded 12, added 0
+Progress: resolved 67, reused 49, downloaded 13, added 0
+Progress: resolved 67, reused 49, downloaded 14, added 0
+Progress: resolved 67, reused 49, downloaded 15, added 0
+Progress: resolved 67, reused 49, downloaded 16, added 0
+Progress: resolved 67, reused 49, downloaded 17, added 0
+Progress: resolved 67, reused 49, downloaded 18, added 0
+ ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@radix-ui%2Freact-sheet: Not Found - 404
+
+This error happened while installing a direct dependency of /workspace/shadcn-ui
+
+@radix-ui/react-sheet is not in the npm registry, or you have no permission to fetch it.
+
+No authorization header was set for the request.
