@@ -1,137 +1,89 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { Button } from '@/components/ui/button';
-import { ThreeBackground } from './ThreeBackground';
 
-export const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [bgMode, setBgMode] = useState<'particles' | 'video'>('particles');
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero entrance animation
-      const tl = gsap.timeline();
-      
-      tl.from('.hero-title', {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out"
-      })
-      .from('.hero-subtitle', {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-      }, "-0.5")
-      .from('.hero-cta', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "back.out(1.7)"
-      }, "-0.3")
-      .from('.scroll-hint', {
-        opacity: 0,
-        duration: 0.5
-      }, "-0.2");
-
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
+export default function HeroSection() {
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section 
-      ref={heroRef}
-      className="hero-section relative h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Three.js Background */}
-      <ThreeBackground type="particles" enabled={bgMode === 'particles'} />
-      {/* Video Background (Optional) */}
-      {bgMode === 'video' && (
-        <div className="absolute inset-0 z-0">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-20"
-            preload="auto"
-          >
-            <source src="/api/placeholder/1920/1080/mp4" type="video/mp4" />
-          </video>
-        </div>
-      )}
-      {/* Overlay Content */}
-      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-        <motion.h1 
-          className="hero-title text-6xl md:text-8xl font-bold mb-6 cinematic-text"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2, ease: 'easeOut' }}
+    <section className="relative w-full h-screen overflow-hidden bg-[#0C0C0D]">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0C0C0D] via-[#1a0a1a] to-[#0C0C0D]" />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FD3555]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#B853FF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#EFEFEF]/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-4">
+        <motion.h1
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+          className="text-4xl md:text-7xl font-extrabold text-white mb-6 tracking-tight"
         >
-          Redesigning Intelligence.
-          <br />
-          <span className="text-coral">Rebuilding the World.</span>
+          <span className="block">Redesigning Intelligence.</span>
+          <motion.span
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1, ease: 'easeOut' }}
+            className="block text-[#FD3555]"
+          >
+            Rebuilding the World.
+          </motion.span>
         </motion.h1>
-        <motion.p 
-          className="hero-subtitle text-xl md:text-2xl text-porcelain/80 mb-12 max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1.5, ease: 'easeOut' }}
+          transition={{ delay: 0.8, duration: 1, ease: 'easeOut' }}
+          className="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl"
         >
           AI / Cloud / Strategy / People — Delivered with Precision & Heart.
         </motion.p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button 
-            className="hero-cta glassmorphic magnetic text-lg px-8 py-4 hover:bg-coral/20 transition-all duration-300"
-            size="lg"
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+          className="flex flex-col md:flex-row gap-6 justify-center mt-8"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 rounded-full bg-[#FD3555] text-white font-bold text-lg shadow-lg transition-all duration-300 hover:bg-[#B853FF] focus:outline-none"
           >
             Explore Karmuu
-          </Button>
-          <Button 
-            variant="outline"
-            className="hero-cta glassmorphic magnetic text-lg px-8 py-4 border-coral/30 hover:border-coral hover:bg-coral/10 transition-all duration-300"
-            size="lg"
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 rounded-full bg-white/10 border border-white/30 text-white font-bold text-lg shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white/20 focus:outline-none"
+            onClick={() => setModalOpen(true)}
           >
             Watch How We Work
-          </Button>
-        </div>
-        {/* Background Toggle */}
-        <div className="mt-8 flex justify-center gap-4">
-          <button
-            className={`px-4 py-2 rounded-full border ${bgMode === 'particles' ? 'bg-coral text-porcelain' : 'bg-vantablack text-coral border-coral'}`}
-            onClick={() => setBgMode('particles')}
-          >
-            Particles
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full border ${bgMode === 'video' ? 'bg-coral text-porcelain' : 'bg-vantablack text-coral border-coral'}`}
-            onClick={() => setBgMode('video')}
-          >
-            Video
-          </button>
-        </div>
-        {/* Scroll Hint */}
-        <motion.div 
-          className="scroll-hint absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <div className="flex flex-col items-center text-porcelain/60">
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-coral/30 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-coral rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
+          </motion.button>
         </motion.div>
       </div>
-      {/* Ambient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-vantablack/20 to-vantablack/80 pointer-events-none"></div>
+
+      {/* Simple Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
+          <div className="bg-[#0C0C0D] p-8 rounded-xl max-w-2xl mx-4" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-white text-xl font-bold">How We Work</h3>
+              <button onClick={() => setModalOpen(false)} className="text-white text-2xl hover:text-[#FD3555]">×</button>
+            </div>
+            <div className="bg-gradient-to-r from-[#FD3555]/20 to-[#B853FF]/20 p-6 rounded-lg">
+              <p className="text-white/80 text-center">
+                Our innovative approach combines cutting-edge AI with human-centered design to deliver transformative solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
-};
+}

@@ -1,40 +1,30 @@
-import { useEffect } from 'react';
-import { useMagneticCursor } from '@/hooks/useMagneticCursor';
+import React, { useEffect, useRef } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
-export const MagneticCursor = () => {
-  const { cursorRef } = useMagneticCursor();
+const MagneticCursor = () => {
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(-100);
+  const y = useMotionValue(-100);
+  const springConfig = { stiffness: 500, damping: 40 };
+  const springX = useSpring(x, springConfig);
+  const springY = useSpring(y, springConfig);
 
   useEffect(() => {
-    // Hide default cursor
-    const style = document.createElement('style');
-    style.innerHTML = `
-      * {
-        cursor: none !important;
-      }
-      .magnetic {
-        cursor: none !important;
-      }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.head.removeChild(style);
+    const moveCursor = (e: MouseEvent) => {
+      x.set(e.clientX - 16);
+      y.set(e.clientY - 16);
     };
-  }, []);
+    window.addEventListener('mousemove', moveCursor);
+    return () => window.removeEventListener('mousemove', moveCursor);
+  }, [x, y]);
 
   return (
-    <div 
+    <motion.div
       ref={cursorRef}
-      className="magnetic-cursor hidden md:block fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9999] mix-blend-lighten"
-      style={{
-        boxShadow: '0 0 32px 8px rgba(255,0,60,0.25), 0 0 64px 16px rgba(124,69,255,0.15)',
-        background: 'rgba(30, 20, 60, 0.18)',
-        backdropFilter: 'blur(8px)',
-        filter: 'blur(2px)',
-        border: '2px solid rgba(255,0,60,0.25)',
-        transition: 'background 0.2s, box-shadow 0.2s',
-      }}
-      aria-hidden="true"
+      className="fixed z-[1000] pointer-events-none w-8 h-8 rounded-full border-2 border-[#FD3555] bg-[#FD3555]/20 mix-blend-difference"
+      style={{ left: 0, top: 0, x: springX, y: springY }}
     />
   );
 };
+
+export default MagneticCursor;
